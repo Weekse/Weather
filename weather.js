@@ -1,10 +1,11 @@
 var appId = '0277544f3c792673b513968816036c41';
-var url = 'http://api.openweathermap.org/data/2.5/weather?q='; 
+var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+var proxy = 'https://cors-anywhere.herokuapp.com/'; 
 
 function searchWeather(search) {
     document.getElementById('loading').classList.add('loading');
     if (search.length > 0) {
-        fetch(url + search + '&appid=' + appId + '&units=metric').then(result => {
+        fetch(proxy + url + search + '&appid=' + appId + '&units=metric').then(result => {
         return result.json();
     }).then(result => {
         init(result);
