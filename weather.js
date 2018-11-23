@@ -14,8 +14,8 @@ function searchWeather(search) {
 }
 
 function init(serverResult) {
-    document.getElementById('loading').classList.remove('loading');
     document.getElementById('weatherContainer').style.display = 'none';
+    document.getElementById('loading').classList.remove('loading');
     document.getElementById('error').style.display = 'flex';
     switch(serverResult.weather[0].main) {
         case 'Clear':
